@@ -1,0 +1,97 @@
+main {
+	justify-content: center;
+	align-items: center;
+}
+
+#weather-widget {
+	display: flex;
+	flex-direction: column;
+
+	gap: 2rem;
+
+	width: clamp(400px, 50vw, 800px);
+}
+
+#forecast-widget {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+#temperature-component {
+	display: flex;
+	flex-direction: column;
+}
+
+#min-max-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-top: 10px;
+}
+
+#min-max-container > div {
+	display: flex;
+	flex-direction: column;
+}
+
+#condition-component {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#details-widget {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, 150px);
+	justify-content: center;
+	margin-top: 1rem;
+	row-gap: 1rem;
+}
+
+.detail-element {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+
+#search-bar {
+	border: 2px solid transparent;
+	font-size: 1rem;
+	width: 200px;
+	padding-bottom: 3px;
+}
+
+#search-bar:focus {
+	outline: none;
+	border-bottom: 2px solid lightgrey;
+}
+
+#city-text {
+	font-size: 3rem;
+	font-weight: bold;
+}
+
+#region-text {
+	font-size: 1rem;
+}
+
+#country-text {
+	font-size: 1rem;
+}
+
+#current-temperature {
+	font-size: 6rem;
+}
+
+.label {
+	text-transform: capitalize;
+	font-size: 1rem;
+	color: grey;
+}
+
+.value {
+	font-size: 1.5rem;
+	margin-top: 5px;
+}

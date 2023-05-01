@@ -1,0 +1,13 @@
+footer {
+	padding: 2rem 0;
+}
+
+footer {
+	border-top: 1px solid lightgrey;
+}
+
+footer .page {
+	display: flex;
+	gap: 1rem;
+	justify-content: center;
+}

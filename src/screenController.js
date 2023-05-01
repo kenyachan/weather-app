@@ -1,0 +1,84 @@
+import { footerWidget } from './modules/footer';
+import { main as createMainElement } from './modules/mainPage';
+import { weatherWidget } from './modules/weatherWidget';
+
+export const screenController = (app) => {
+	const bodyElement = document.querySelector('body');
+
+	const main = (() => {
+		const mainElement = createMainElement();
+		bodyElement.appendChild(mainElement);
+
+		const weatherElement = weatherWidget();
+		mainElement.appendChild(weatherElement);
+	})();
+
+	const footer = (() => {
+		const footerElement = footerWidget();
+
+		bodyElement.appendChild(footerElement);
+	})();
+
+	const searchBar = (() => {
+		const searchbar = document.querySelector('#search-bar');
+		searchbar.addEventListener('search', async (e) => {
+
+			let forecast = await app.getForecast(searchbar.value);
+			//console.log(forecast);
+			updateView(forecast);
+		});
+	})();
+
+	const loadDefaultLocale = (async () => {
+		let defaultLocale = 'Sydney';
+
+		let forecast = await app.getForecast(defaultLocale);
+		updateView(forecast);
+	})();
+
+	function updateView(forecast) {
+		updateLocationWidget(forecast);
+		updateForecastWidget(forecast);
+		updateDetailsWidget(forecast);
+	}
+
+	function updateLocationWidget(forecast) {
+		let cityText = document.querySelector('#city-text');
+		let regionText = document.querySelector('#region-text');
+		let countryText = document.querySelector('#country-text');
+
+		cityText.textContent = forecast.locale.name;
+		regionText.textContent = forecast.locale.region;
+		countryText.textContent = forecast.locale.country;
+	}
+
+	function updateForecastWidget(forecast) {
+		let currentTemp = document.querySelector('#current-temperature');
+		let minTemp = document.querySelector('#min-temp');
+		let maxTemp = document.querySelector('#max-temp');
+		let feelsLike = document.querySelector('#feels-like');
+
+		currentTemp.textContent = `${forecast.current.temperature}\u00B0`;
+		minTemp.textContent = `${forecast.forecastDay.minTemp}\u00B0`;
+		maxTemp.textContent = `${forecast.forecastDay.maxTemp}\u00B0`;
+		feelsLike.textContent = `${forecast.current.feelslike}\u00B0`;
+
+		let conditionIcon = document.querySelector('#condition-icon');
+		let conditionText = document.querySelector('#condition-text');
+
+		conditionIcon.src = forecast.current.condition.icon;
+		conditionText.textContent = forecast.current.condition.text;
+	}
+
+	function updateDetailsWidget(forecast) {
+		let humidity = document.querySelector('#humidity');
+		let precip = document.querySelector('#precipitation');
+		let uvIndex = document.querySelector('#uv-index');
+		let aqi = document.querySelector('#aqi');
+
+		humidity.textContent = `${forecast.forecastDay.avgHumidity}%`;
+		precip.textContent = `${forecast.forecastDay.precipitation}mm`;
+		uvIndex.textContent = forecast.forecastDay.uvIndex;
+		aqi.textContent = forecast.current.aqi;
+	}
+}

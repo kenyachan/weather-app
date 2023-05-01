@@ -1,33 +1,21 @@
+import { forecast as newForecast } from './modules/objects/forecast';
+
 export function weatherApp() {
-	const apiEndPoint = "https://api.weatherapi.com/v1/current.json";
-	const apiKey = '95ce1f183f22452981d74145232304';
+	async function getForecast(city) {
+		const baseUrl = 'https://api.weatherapi.com/v1';
+		const forecastEndPoint = '/forecast.json';
+		const apiKey = '95ce1f183f22452981d74145232304';
 
-	async function getCurrentWeatherData(city) {
-		const response = await fetch(`${apiEndPoint}?key=${apiKey}&q=${city}`, { mode: 'cors' });
-		const weatherData = await response.json();
+		const response = await fetch(`${baseUrl}${forecastEndPoint}?key=${apiKey}&q=${city}&aqi=yes`, { mode: 'cors' });
+		const forecastData = await response.json();
 
-		// consider what happens when an invalid city is provided.
+		let forecast = newForecast(forecastData);
 
-		return weatherData;
-	}
-
-	async function getCurrentWeather(city) {
-		let weatherData = await getCurrentWeatherData(city);
-
-		logWeather(weatherData);
-
-		return weatherData;
-	}
-
-	function logWeather(weatherData) {
-		console.log(weatherData);
-
-		console.log(`Current weather for ${weatherData.current.name} is ${weatherData.current.condition.text}`);
-		console.log(`Temperature: ${weatherData.current.temp_c}`);
+		return forecast;
 	}
 
 	return {
-		getCurrentWeather,
+		getForecast,
 	}
 }
 
