@@ -76,9 +76,9 @@ export const screenController = (app) => {
 		let uvIndex = document.querySelector('#uv-index');
 		let aqi = document.querySelector('#aqi');
 
-		humidity.textContent = `${forecast.forecastDay.avgHumidity}%`;
-		precip.textContent = `${forecast.forecastDay.precipitation}mm`;
-		uvIndex.textContent = forecast.forecastDay.uvIndex;
+		humidity.textContent = `${forecast.current.humidity}%`;
+		precip.textContent = `${forecast.current.precipitation}mm`;
+		uvIndex.textContent = forecast.current.uvIndex;
 		aqi.textContent = forecast.current.aqi;
 	}
 }
