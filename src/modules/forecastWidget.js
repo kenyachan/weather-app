@@ -103,6 +103,7 @@ function conditionIcon() {
 function conditionText() {
 	const element = document.createElement('p');
 	element.id = 'condition-text';
+	element.classList.add('value');
 
 	return element;
 }
