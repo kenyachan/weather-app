@@ -62,11 +62,14 @@ main {
 	font-size: 1rem;
 	width: 200px;
 	padding-bottom: 3px;
+	transition: border .25s ease-out;
 }
 
 #search-bar:focus {
 	outline: none;
 	border-bottom: 2px solid lightgrey;
+	transition: border .25s ease-in;
+
 }
 
 #city-text {
