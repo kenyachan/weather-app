@@ -6,6 +6,7 @@ import { detailsWidget as newDetailsWidget } from './detailsWidget';
 export function weatherWidget() {
 	const widgetElement = document.createElement('div');
 	widgetElement.id = 'weather-widget';
+	widgetElement.classList.add('page');
 
 	const searchBar = newSearchBar(); 
 	widgetElement.appendChild(searchBar);

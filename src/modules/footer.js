@@ -51,9 +51,16 @@ function createAttributeWidget() {
 }
 
 function createWidgetSeparator() {
+	const separator = document.createElement('span');
+	separator.classList.add('widgetSeparator');
+	
+	return separator;
+
+	/*
 	const separator = document.createElement('p');
 	separator.classList.add('widgetSeparator');
 	separator.textContent = '|';
 
 	return separator;
+	*/
 }

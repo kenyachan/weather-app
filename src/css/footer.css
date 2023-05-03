@@ -4,10 +4,29 @@ footer {
 
 footer {
 	border-top: 1px solid lightgrey;
+	display: flex;
+	justify-content: center;
 }
 
 footer .page {
 	display: flex;
 	gap: 1rem;
+	justify-content: center; 
+}
+
+.footer-widget {
+	display: flex;
 	justify-content: center;
+}
+
+.footer-widget > p {
+	text-align: center;
+}
+
+footer .widgetSeparator {
+	height: 160%;
+	width: 1px;
+	background: black;
+	position: relative;
+	top: -30%;
 }

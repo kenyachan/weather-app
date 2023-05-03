@@ -3,13 +3,16 @@ main {
 	align-items: center;
 }
 
+.page {
+	width: clamp(300px, 80vw, 600px);
+}
+
 #weather-widget {
 	display: flex;
 	flex-direction: column;
+	margin: 2rem 0;
 
 	gap: 2rem;
-
-	width: clamp(400px, 50vw, 800px);
 }
 
 #forecast-widget {
@@ -104,3 +107,4 @@ main {
 	font-size: 1.5rem;
 	margin-top: 10px;
 }
+
