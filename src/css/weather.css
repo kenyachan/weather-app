@@ -60,10 +60,11 @@ main {
 }
 
 #search-bar {
+	background: none;
 	border: 2px solid transparent;
 	font-size: 1rem;
 	width: 200px;
-	padding-bottom: 3px;
+	padding: 3px 0;
 	transition: border .25s ease-out;
 }
 
