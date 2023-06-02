@@ -1,30 +1,9 @@
-import { footerWidget } from './modules/footer';
-import { main as createMainElement } from './modules/mainPage';
-import { weatherWidget } from './modules/weatherWidget';
-
 export const screenController = (app) => {
-	const bodyElement = document.querySelector('body');
-
-	const main = (() => {
-		const mainElement = createMainElement();
-		bodyElement.appendChild(mainElement);
-
-		const weatherElement = weatherWidget();
-		mainElement.appendChild(weatherElement);
-	})();
-
-	const footer = (() => {
-		const footerElement = footerWidget();
-
-		bodyElement.appendChild(footerElement);
-	})();
-
-	const searchBar = (() => {
+	const initSearchBar = (() => {
 		const searchbar = document.querySelector('#search-bar');
 		searchbar.addEventListener('search', async (e) => {
 
 			let forecast = await app.getForecast(searchbar.value);
-			//console.log(forecast);
 			updateView(forecast);
 		});
 	})();

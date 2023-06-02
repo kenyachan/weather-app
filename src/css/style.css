@@ -14,9 +14,15 @@ body {
 	display: flex;
 	flex-direction: column;
 	min-height: 100svh;
+	align-items: center;
+	padding: 2rem 1rem;
+	gap: 3rem;
 }
 
 main {
-	display: flex;
-	flex: 1 1 auto;
+	margin: auto;
+}
+
+.page {
+	width: clamp(300px, 80vw, 600px);
 }

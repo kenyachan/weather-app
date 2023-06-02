@@ -1,17 +1,6 @@
-main {
-	justify-content: center;
-	align-items: center;
-}
-
-.page {
-	width: clamp(300px, 80vw, 600px);
-}
-
 #weather-widget {
 	display: flex;
 	flex-direction: column;
-	margin: 2rem 0;
-
 	gap: 2rem;
 }
 
@@ -19,6 +8,8 @@ main {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	gap: 2rem;
+	align-items: flex-start;
 }
 
 #temperature-component {
@@ -42,6 +33,10 @@ main {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+}
+
+#condition-component p{
+	text-align: center;
 }
 
 #details-widget {

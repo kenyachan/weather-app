@@ -1,32 +1,20 @@
 footer {
-	padding: 2rem 0;
-}
-
-footer {
-	border-top: 1px solid lightgrey;
 	display: flex;
-	justify-content: center;
-}
-
-footer .page {
-	display: flex;
+	justify-content: space-between;
 	gap: 1rem;
-	justify-content: center; 
-}
-
-.footer-widget {
-	display: flex;
-	justify-content: center;
-}
-
-.footer-widget > p {
-	text-align: center;
+	margin-inline: auto;
 }
 
 footer .widgetSeparator {
-	height: 160%;
 	width: 1px;
 	background: black;
-	position: relative;
-	top: -30%;
+}
+
+footer a {
+	text-decoration: none;
+}
+
+footer p {
+	width: 50%;
+	text-align: center;
 }
