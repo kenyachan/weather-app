@@ -14,7 +14,12 @@ footer a {
 	text-decoration: none;
 }
 
-footer p {
+footer div {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
 	width: 50%;
 	text-align: center;
+	gap: .2rem;
 }
