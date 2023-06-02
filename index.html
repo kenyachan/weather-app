@@ -1,9 +1,67 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1"><script defer src="runtime.bundle.js"></script><script defer src="main.bundle.js"></script></head>
-  <body>
-  </body>
+<script defer src="runtime.bundle.js"></script><script defer src="main.bundle.js"></script></head>
+<body>
+    <main class="page">
+        <div id="weather-widget">
+            <input type="search" id="search-bar" placeholder="Search for a city..." title="Enter a city">
+            <div id="location-widget">
+                <p id="city-text"></p>
+                <p id="region-text"></p>
+                <p id="country-text"></p>
+            </div>
+            <div id="forecast-widget">
+                <div id="temperature-component">
+                    <p id="current-temperature"></p>
+                    <div id="feels-like-container">
+                        <p class="label">Feels-like</p>
+                        <p id="feels-like" class="value"></p>
+                    </div>
+                    <div id="min-max-container">
+                        <div>
+                            <p id="min-temp-label" class="label">Min</p>
+                            <p id="min-temp" class="value"></p>
+                        </div>
+                        <div>
+                            <p id="max-temp-label" class="label">Max</p>
+                            <p id="max-temp" class="value"></p>
+                        </div>
+                    </div>
+                </div>
+                <div id="condition-component">
+                    <img src="" alt="" id="condition-icon">
+                    <p id="condition-text" class="value"></p>
+                </div>
+            </div>
+            <div id="details-widget">
+                <div class="detail-element">
+                    <p class="label">Humidity</p>
+                    <p id="humidity" class="value"></p>
+                </div>
+                <div class="detail-element">
+                    <p class="label">Precipitation</p>
+                    <p id="precipitation" class="value"></p>
+                </div>
+                <div class="detail-element">
+                    <p class="label">UV Index</p>
+                    <p id="uv-index" class="value"></p>
+                </div>
+                <div class="detail-element">
+                    <p class="label">Air Quality Index</p>
+                    <p id="aqi" class="value"></p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="page">
+        <p>Created by <a href="https://github.com/kenyachan" title="GitHub Profile">Kenya Chan</a></p>
+        <span class="widgetSeparator"></span>
+        <p>Powered by <a href="https://weatherapi.com" title="Free Weather API">Weather API.com</a></p>
+    </footer>
+</body>
 </html>
